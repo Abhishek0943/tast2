@@ -12,7 +12,7 @@ function App() {
 
   const fetchCustomers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/customers');
+      const response = await axios.get('https://tast2.onrender.com/customers');
       setCustomers(response.data);
     } catch (error) {
       console.error('Error fetching customers:', error);
@@ -39,7 +39,7 @@ function App() {
     }
     
     try {
-      await axios.post('http://localhost:3001/customers', formData);
+      await axios.post('https://tast2.onrender.com/customers', formData);
       setFormData({ name: '', email: '', phone: '' });
       fetchCustomers();
     } catch (error) {
@@ -49,7 +49,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/customers/${id}`);
+      await axios.delete(`https://tast2.onrender.com/customers/${id}`);
       fetchCustomers();
     } catch (error) {
       console.error('Error deleting customer:', error);
